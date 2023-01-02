@@ -13,6 +13,7 @@
     "ngrok": "^3.4.0"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.51.0"
+    "node-telegram-bot-api": "^0.51.0",
+    "node-fetch": "^3.3.0"
   }
 }
