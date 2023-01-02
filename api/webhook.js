@@ -29,6 +29,19 @@ module.exports = async (request, response) => {
 
             // Send our new message back in Markdown
             await bot.sendMessage(id, message, {parse_mode: 'Markdown'});
+            if (text == '/start' || text == '/help') {
+        bot.sendMessage(id, 'Hello! I am a bot that can answer if you send any pincode i will list all areas \nexample send : 226101')
+      }
+      
+
+      const url = 'https://api.postalpincode.in/pincode/' + parseInt(text);
+      const response = await fetch(url);
+      const data = await response.json();
+    
+
+      if (data[0].Status != 'private')
+        bot.sendMessage(id, "Please Write correct pin" + JSON.stringify(data));
+
         }
     }
     catch(error) {
