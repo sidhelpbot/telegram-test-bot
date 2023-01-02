@@ -30,7 +30,7 @@ module.exports = async (request, response) => {
             // Send our new message back in Markdown
             await bot.sendMessage(id, message, {parse_mode: 'Markdown'});
             if (text == '/start' || text == '/help') {
-        bot.sendMessage(id, 'Hello! I am a bot that can answer if you send any pincode i will list all areas \nexample send : 226101')
+            await bot.sendMessage(id, 'Hello! I am a bot that can answer if you send any pincode i will list all areas \nexample send : 226101', {parse_mode: 'Markdown'})
       }
       
 
@@ -40,7 +40,7 @@ module.exports = async (request, response) => {
     
 
       if (data[0].Status != 'private')
-        bot.sendMessage(id, "Please Write correct pin" + JSON.stringify(data));
+       await bot.sendMessage(id, "Please Write correct pin" + JSON.stringify(data), {parse_mode: 'Markdown'});
 
         }
     }
